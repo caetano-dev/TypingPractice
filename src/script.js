@@ -4,7 +4,7 @@ const quoteInputElement = document.getElementById("quoteInput");
 const buttonElement = document.getElementById("button");
 const timerElement = document.getElementById("timer");
 
-if (quoteInputElement.innerText != "") {
+
   quoteInputElement.addEventListener("input", () => {
     const QuoteArray = QuoteDisplayElement.querySelectorAll("span");
     const ValueArray = quoteInputElement.value.split("");
@@ -26,7 +26,6 @@ if (quoteInputElement.innerText != "") {
     });
     if (correct) RenderQuote();
   });
-}
 
 buttonElement.addEventListener("click", () => RenderQuote());
 
