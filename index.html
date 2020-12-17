@@ -15,13 +15,7 @@
   <body>
     <script>
       if('serviceWorker' in navigator){
-        navigator.serviceWorker.register("./service-worker.js").then(registration => {
-          console.log("registered!")
-          console.log(registration)
-        }).catch(error => {
-        console.log("Registration Error!");
-        console.log(error)
-      })
+        navigator.serviceWorker.register("./service-worker.js")
     }
     </script>
     <header class="titleContainer">
