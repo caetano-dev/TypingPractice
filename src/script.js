@@ -4,27 +4,29 @@ const quoteInputElement = document.getElementById("quoteInput");
 const buttonElement = document.getElementById("button");
 const timerElement = document.getElementById("timer");
 
-quoteInputElement.addEventListener("input", () => {
-  const QuoteArray = QuoteDisplayElement.querySelectorAll("span");
-  const ValueArray = quoteInputElement.value.split("");
-  let correct = true;
-  QuoteArray.forEach((CharacterSpan, index) => {
-    const character = ValueArray[index];
-    if (character == null) {
-      CharacterSpan.classList.remove("correct");
-      CharacterSpan.classList.remove("incorrect");
-      correct = false;
-    } else if (character === CharacterSpan.innerText) {
-      CharacterSpan.classList.add("correct");
-      CharacterSpan.classList.remove("incorrect");
-    } else {
-      CharacterSpan.classList.remove("correct");
-      CharacterSpan.classList.add("incorrect");
-      correct = false;
-    }
+if (quoteInputElement.innerText != "") {
+  quoteInputElement.addEventListener("input", () => {
+    const QuoteArray = QuoteDisplayElement.querySelectorAll("span");
+    const ValueArray = quoteInputElement.value.split("");
+    let correct = true;
+    QuoteArray.forEach((CharacterSpan, index) => {
+      const character = ValueArray[index];
+      if (character == null) {
+        CharacterSpan.classList.remove("correct");
+        CharacterSpan.classList.remove("incorrect");
+        correct = false;
+      } else if (character === CharacterSpan.innerText) {
+        CharacterSpan.classList.add("correct");
+        CharacterSpan.classList.remove("incorrect");
+      } else {
+        CharacterSpan.classList.remove("correct");
+        CharacterSpan.classList.add("incorrect");
+        correct = false;
+      }
+    });
+    if (correct) RenderQuote();
   });
-  if (correct) RenderQuote();
-});
+}
 
 buttonElement.addEventListener("click", () => RenderQuote());
 
@@ -56,5 +58,3 @@ function startTimer() {
     timer.innerText = getTimerTime();
   }, 1000);
 }
-
-
