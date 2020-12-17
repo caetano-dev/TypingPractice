@@ -18,20 +18,25 @@ body {
   background-color: rgb(145, 184, 221);
   padding: 1rem;
   border-radius: 0.5rem;
-  width: 700px;
+  width: 50rem;
   max-width: 90%;
 }
-.title {
+.titleContainer {
   position: absolute;
-  top: 2rem;
+  text-align: center;
+  top: 0;
+  width: 100%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   font-size: 3rem;
   color: white;
   font-weight: bold;
+  background-color: rgb(71, 139, 202);
 }
 .timer {
   position: absolute;
-  top: 10rem;
-  font-size: 2rem;
+  top: 7rem;
+  font-size: 3rem;
   color: white;
   font-weight: bold;
 }
@@ -39,6 +44,7 @@ body {
   margin-bottom: 1rem;
   margin-left: 1rem;
   user-select: none;
+  font-size: 1.2rem;
 }
 .quote-input {
   background-color: transparent;
@@ -49,14 +55,14 @@ body {
   margin: auto;
   resize: none;
   padding: 0.5rem 1rem;
-  font-size: 1rem;
+  font-size: 1.2rem;
   border-radius: 0.5rem;
 }
 .quote-input:focus {
   border-color: black;
 }
 .correct {
-  color: rgb(102, 102, 102);
+  color: rgb(13, 102, 10);
 }
 .incorrect {
   color: rgb(206, 26, 26);
@@ -79,4 +85,16 @@ body {
 }
 .button:hover {
   background-color: rgb(233, 86, 18);
+}
+@media (max-width: 900px) {
+  .titleContainer {
+    padding-top: 0.1rem;
+    padding-bottom: 0.1rem;
+    font-size: 2.6rem;
+    display: none;
+  }
+  .timer {
+    top: 0;
+    font-size: 2rem;
+  }
 }
