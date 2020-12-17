@@ -3,12 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#679ac9">
     <link rel="stylesheet" href="styles.css" />
     <script src="script.js" defer></script>
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="logo.png">
     <title>Typing Game</title>
   </head>
 
   <body>
+    <script>
+      if('serviceWorker' in navigator){
+        navigator.serviceWorker.register("./service-worker.js").then(registration => {
+          console.log("registered!")
+          console.log(registration)
+        }).catch(error => {
+        console.log("Registration Error!");
+        console.log(error)
+      })
+    }
+    </script>
     <div class="title">Typing Practice</div>
     <div class="timer" id="timer">0</div>
     <div class="container">
