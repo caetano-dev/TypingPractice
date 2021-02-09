@@ -1,11 +1,7 @@
-### Typing Game
+### Typing Practice Game
 
 A progressive typing game that generates random phrases using an API
 
-## Desktop
+# The website
 
 ![Screenshot](./.github/screenshot1.png)
-
-## Mobile
-
-![Screenshot](./.github/screenshot2.png)
